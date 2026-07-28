@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Rakan Arami</title>
+    <script src="home.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-dark: #111827;
+            --bg-light: #f9fafb;
+            --primary-purple: #a855f7;
+            --primary-purple-hover: #9333ea;
+            --text-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-muted: #6b7280;
+            --card-bg: #ffffff;
+            --border-radius: 16px;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Hero Section (Dark) */
+        .hero-section {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            padding: 2rem 5% 6rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 4rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-purple);
+        }
+
+        .btn-contact {
+            background-color: var(--primary-purple);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background 0.3s;
+        }
+
+        .btn-contact:hover {
+            background-color: var(--primary-purple-hover);
+        }
+
+        /* Hero Content */
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            color: var(--primary-purple);
+        }
+
+        .hero-desc {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--bg-dark);
+        }
+
+        .btn-secondary {
+            background-color: #1f2937;
+            color: white;
+            border: 1px solid #374151;
+        }
+
+        /* Hero Image */
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 400px;
+            background-color: #1f2937;
+            border-radius: var(--border-radius);
+            position: relative;
+            z-index: 2;
+            border: 2px solid #374151;
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            color: #9ca3af;
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            width: 300px;
+            height: 400px;
+            background-color: var(--primary-purple);
+            border-radius: var(--border-radius);
+            top: 20px;
+            right: -20px;
+            z-index: 1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Section Headers */
+        .section-tag {
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--primary-purple);
+            padding-left: 0.5rem;
+        }
+        
+        .section-tag.center {
+            text-align: center;
+            border-left: none;
+            padding-left: 0;
+            display: inline-block;
+            border-bottom: 2px solid var(--primary-purple);
+            margin: 0 auto 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #9ca3af;
+        }
+
+        .section-title.center {
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: center;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .skill-item svg {
+            color: var(--primary-purple);
+            width: 20px;
+            height: 20px;
+        }
+
+        .about-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            border: 1px solid #f3f4f6;
+        }
+
+        /* Education Section */
+        .education-section {
+            margin-bottom: 6rem;
+        }
+
+        .edu-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f3f4f6;
+        }
+
+        .edu-header {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #f3f4f6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .edu-info h3 {
+            font-size: 1.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-major {
+            color: var(--primary-purple);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .edu-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Moments Grid */
+        .moments-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin: 2rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .moment-img {
+            background-color: #f9fafb;
+            border-radius: 12px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid #f3f4f6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+        }
+
+
+
+        /* CSS untuk Modal (Popup) */
+             .modal {
+            display: none; /* Disembunyikan secara default */
+            position: fixed; 
+            z-index: 9999; /* Memastikan popup berada paling atas */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam transparan */
+        }
+
+        .modal-content {
+            background-color: #1a1b26; /* Warna gelap menyesuaikan background web Anda */
+            color: #ffffff;
+            margin: 15% auto; /* Posisi di tengah layar */
+            padding: 30px;
+            border: 2px solid #b366ff; /* Border ungu senada dengan tombol Anda */
+            border-radius: 12px;
+            width: 80%; 
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-family: sans-serif;
+        }
+
+        .modal-content h2 {
+            color: #b366ff; /* Teks judul warna ungu */
+            margin-top: 0;
+        }
+
+        .close-button {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 12px; /* Ini kode untuk membuat sudut melengkung */
+        }
+
+        /* === KODE UNTUK TAMPILAN HP === */
+        @media (max-width: 768px) {
+            /* 1. Menyesuaikan Bagian Hero (Atas) */
+            .hero-content {
+                flex-direction: column; /* Mengubah susunan kiri-kanan jadi atas-bawah */
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem; /* Mengecilkan teks judul */
+            }
+
+            .hero-desc {
+                margin: 0 auto 2rem; /* Menengahkan teks deskripsi */
+            }
+
+            .hero-buttons {
+                justify-content: center; /* Menengahkan tombol GitHub */
+            }
+
+            .hero-image-container {
+                margin-top: 2rem;
+                justify-content: center;
+            }
+
+            /* 2. Menyesuaikan Bagian Tentang Saya */
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .skills-grid {
+                justify-content: center; /* Menengahkan list skill */
+            }
+
+            .about-card {
+                width: 100%; /* Membuat kartu kotak coding penuh mengikuti layar */
+                justify-content: center;
+            }
+
+            /* 3. Menyesuaikan Bagian Pendidikan & Grid Foto */
+            .edu-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .edu-date {
+                justify-content: center;
+            }
+
+            .moments-grid {
+                grid-template-columns: 1fr; /* Mengubah 3 foto berjajar menjadi 1 baris ke bawah */
+            }
+            
+            /* 4. Menyesuaikan Popup Modal di HP */
+            .modal-content {
+                width: 90%;
+                margin: 30% auto;
+            }
+        }
+
+/* === TEMA GELAP (MANUAL & OTOMATIS) === */
+        /* Class ini akan aktif jika tombol ditekan */
+        body.dark-theme {
+            --bg-light: #111827; 
+            --text-dark: #f9fafb;
+            --text-muted: #9ca3af;
+            --card-bg: #1f2937;
+        }
+
+        body.dark-theme .about-card, 
+        body.dark-theme .edu-logo, 
+        body.dark-theme .moment-img {
+            background-color: #1f2937 !important;
+            border-color: #374151 !important;
+            color: #f3f4f6;
+        }
+
+        body.dark-theme .edu-card {
+            border-color: #374151;
+        }
+
+        body.dark-theme .hero-section {
+            background-color: #030712; 
+        }
+
+        /* Animasi Transisi Halus saat ganti tema */
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .about-card, .edu-card, .edu-logo, .moment-img, .hero-section {
+            transition: background-color 0.4s ease, border-color 0.4s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+<nav class="navbar">
+        <div class="logo"> Vinegar</div>
+    
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <!-- Tombol Dark Mode -->
+            <button id="theme-toggle" style="background: none; border: none; cursor: pointer; color: white; font-size: 1.2rem;">
+                🌙
+            </button>
+            
+            <a href="#" id="contactBtn" class="btn-contact">CONTACT ME</a>
+        </div> <!-- Penutup ditambahkan di sini -->
+    </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Muhammad<br><span>Rakan</span><br>Arami</h1>
+                <p class="hero-desc">Halo! Saya seorang mahasiswa Informatika di Telkom University yang sedang aktif mengeksplorasi dunia rekayasa perangkat lunak dan pengembangan web. Saya menikmati proses memecahkan masalah melalui kode dan terus mengasah keterampilan teknis saya lewat berbagai proyek kuliah maupun personal, saya selalu bersemangat untuk mempelajari teknologi baru serta membangun proyek-proyek yang bermanfaat </p>
+                <div class="hero-buttons">
+                   <a href="https://github.com/rakanarami-arch" target="_blank" class="btn btn-secondary">
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+    GitHub
+</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image-bg"></div>
+                <div class="hero-image">
+                    <!-- Ganti dengan tag img Anda -->
+                    <img src="fileGambar/WhatsApp Image 2026-07-25 at 09.40.22.jpeg" alt="Foto Profil Saya" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-content">
+                <div class="section-tag">TENTANG SAYA</div>
+                <h2 class="section-title">Rekayasa Perangkat Lunak & Pengembangan Web</h2>
+                <p class="about-desc">Seseorang yang antusias dalam dunia rekayasa perangkat lunak. Terbiasa mengoperasikan ekosistem PHP/Laravel untuk pengembangan web penuh, memanfaatkan kekuatan Go untuk pemrosesan performa tinggi, dan JavaScript untuk menciptakan interaksi pengguna yang intuitif.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Laravel Framework
+                    </div>
+                    <div class="skill-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> PHP
+                    </div>
+                    <div class="skill-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Golang
+                    </div>
+                    <div class="skill-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> javascript
+                    </div>
+                </div>
+            </div>
+            <div class="about-card" style="justify-content: center; gap: 1.5rem; padding: 1.5rem;">
+            <!-- Logo Laravel -->
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" width="40" height="40" title="Laravel">
+            
+            <!-- Logo PHP -->
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" width="40" height="40" title="PHP">
+            
+            <!-- Logo JavaScript -->
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" title="JavaScript">
+            
+            <!-- Logo Golang -->
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" alt="Golang" width="40" height="40" title="Golang">
+        </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education-section">
+            <div style="text-align: center;">
+                <div class="section-tag center">PENDIDIKAN</div>
+            </div>
+            <h2 class="section-title center">Riwayat Akademik & Kegiatan</h2>
+            <p class="section-subtitle">Jejak pendidikan saya beserta beberapa momen kegiatan selama masa studi.</p>
+
+            <!-- Campus Card -->
+            <div class="edu-card">
+                <div class="edu-header">
+                    <div class="edu-logo" style="overflow: hidden; padding: 0.5rem; background-color: white;">
+                        <img src="fileGambar/download (1).png" alt="Logo Universitas" style="width: 150%; height: 150%; object-fit: contain;">
+                    </div>
+                    <div class="edu-info">
+                        <h3>Universitas Telkom</h3>
+                        <div class="edu-major">S1 Informatika</div>
+                        <div class="edu-date">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            2025 - Sekarang
+                        </div>
+                        <p class="edu-desc">Fokus mendalami bidang Informatika dengan ketertarikan pada eksplorasi teknologi modern dan pemecahan masalah. Beralaman aktif dalam kegiatan akademik, organisasi mahasiswa, dan proyek kolaboratif di lingkungan kampus.</p>
+                    </div>
+                </div>
+
+                <div class="moments-title">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    MOMEN & KEGIATAN KAMPUS
+                </div>
+                <div class="moments-grid">
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/WhatsApp Image 2026-07-25 at 10.09.33.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/WhatsApp Image 2026-07-25 at 21.05.13.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/687e6b18-54c4-406d-b2d5-db337487ee83.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+            </div>
+
+            <!-- High School Card -->
+            <div class="edu-card">
+                <div class="edu-header">
+                    <div class="edu-logo" style="overflow: hidden; padding: 0.5rem; background-color: white;">
+                        <img src="fileGambar/Logo-smanten.png" alt="Logo Universitas" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="edu-info">
+                        <h3>SMA Negeri 10 Padang</h3>
+                        <div class="edu-major">Jurusan Ilmu Pengetahuan Alam</div>
+                        <div class="edu-date">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            2022 - 2025
+                        </div>
+                        <p class="edu-desc">Masa di mana saya mulai mengembangkan minat dan bakat. Mengikuti kegiatan ekstrakurikuler yang membentuk karakter dan kemampuan kerja tim yang baik, serta meningkatkan kemampuan akademik saya secara signifikan.</p>
+                    </div>
+                </div>
+
+                <div class="moments-title">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    MOMEN & KEGIATAN SMA
+                </div>
+                <div class="moments-grid">
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/4fc112df-0bdd-4d4e-a87a-3b493c606e8f.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/4898d396-b759-425f-983d-962cd7fa0602.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                    <div class="moment-img" style="overflow: hidden; padding: 0;">
+                    <img src="fileGambar/b9759285-e137-4b48-b00f-766c9bb23db4.jpeg" alt="Kegiatan Kampus 1" style="width: 100%; height: 100%; object-fit: cover;"></div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 Portofolio Saya. Dibuat dengan HTML CSS & JavaScript
+    </footer>
+
+    <!-- Modal Contact Me -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Hubungi Saya</h2>
+    <p><strong>Email:</strong> rakanarami@gmail.com</p>
+    <p><strong>WhatsApp:</strong> +62 812-7055-7451</p>
+    <p><strong>LinkedIn:</strong> www.linkedin.com/in/muhammad-rakan-arami-ba0aa4388</p>
+  </div>
+</div>
+</body>
+</html>
