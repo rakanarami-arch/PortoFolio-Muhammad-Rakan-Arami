@@ -662,7 +662,23 @@
             .moments-grid {
                 grid-template-columns: 1fr; /* Mengubah 3 foto berjajar menjadi 1 baris ke bawah */
             }
-            
+
+            /* Course cards follow the same stacked layout as the education cards. */
+            .certification-card {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .certification-content h3 {
+                font-size: 1.25rem;
+            }
+
+            .certification-image {
+                height: auto;
+                aspect-ratio: 4 / 3;
+            }
+
             /* Contact modal on small screens */
             .modal-content {
                 padding: 26px 20px 22px;
